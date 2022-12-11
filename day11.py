@@ -36,6 +36,8 @@ class Monkey:
 
         self.items = []
 
+    # The trick is that since all the test elements are prime and different we can notice that
+    # item % x is equal to (item % (product of all test elements)) % x
     def do_turn_part_two(self) -> None:
         for item in self.items:
             self.nr_of_items_inspected += 1
@@ -81,7 +83,7 @@ class InputParser:
                         monkey_false,
                     )
                 )
-                self.max_worry *= test_nr
+                self.max_worry *= test_nr # all test elements elements are prime and different
 
         return monkey_list
     
